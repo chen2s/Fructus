@@ -16,13 +16,11 @@ struct SettingsView: View {
             ScrollView(.vertical, showsIndicators: false){
                 VStack(spacing: 20){
                     // MARK: - SECTION 1
-                    
-                    GroupBox (
-                    label:
-                        SettingsLabelView(labelText: "Fructus", labelImage: "info.circle")
+                GroupBox (
+                 label:
+                    SettingsLabelView(labelText: "Fructus", labelImage: "info.circle")
                     ) {
                         Divider().padding(.vertical, 4)
-                        
                         HStack(alignment: .center, spacing: 10) {
                            Image("logo")
                             .resizable()
@@ -35,9 +33,25 @@ struct SettingsView: View {
                         }
                     }
                     
-                    // MARK: - SECTION 3
+                    // MARK: - SECTION 2
+                    
+                    
+                    
                     
                     // MARK: - SECTION 3
+                    
+                    GroupBox(
+                    label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")
+                    ){
+
+                        SettingsRowView(name: "Developer", content: "Isaac / Hernández")
+                        SettingsRowView(name: "Designer", content: "Rober Petras")
+                        SettingsRowView(name: "Compatibility", content: "iOS 14")
+                        SettingsRowView(name: "Website", linkLabel: "SwiftUI MasterClass", linkDestination: "google.com")
+                        SettingsRowView(name: "Twitter", linkLabel: "@Chen2s", linkDestination: "twitter.com")
+                        SettingsRowView(name: "SwiftUI", content: "2.0")
+                        SettingsRowView(name: "Version", content: "1.1.0")
+                    }
                 }
                 .navigationBarTitle(Text("Settings"),displayMode: .large)
                 .navigationBarItems (
